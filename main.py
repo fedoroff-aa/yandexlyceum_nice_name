@@ -54,9 +54,12 @@ name = 'АЛЕКСЕЙ'
 frames = []
 frames_quantity = sum([len(x) for x in letters.values()]) + 100
 
+# параметры букв и фигур, из которых буквы состоят
 letter_width = 210
 letter_height = 300
 ball_size = 20
+
+# список цветов, в которые будут покрашены фигуры
 shades_of_purple = ['#800080', '#9370DB', '#BF00FF', '#A020F0', '#9F00C5',
                     '#66023C', '#92717C', '#7851A9', '#6C3082', '#9678B6',
                     '#86608E', '#B768A2', '#843F5B', '#9966CC', '#69359C',
@@ -84,4 +87,5 @@ for frame_number in range(frames_quantity):
     frames.append(img)
     move_right(shades_of_purple)
 
+# сохраняем список кадров frames как GIF-анимацию
 frames[0].save('name.gif', format='GIF', append_images=frames[1:], save_all=True, duration=10, loop=0)
